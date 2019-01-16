@@ -23,7 +23,8 @@ Rails.application.config.middleware.use OmniAuth::Builder do
                ENV.fetch('BARONG_CLIENT_ID'),
                ENV.fetch('BARONG_CLIENT_SECRET'),
                domain: ENV.fetch('BARONG_DOMAIN'),
-               use_https: ENV.fetch('BARONG_USE_HTTPS', 'true') == 'true'
+               use_https: ENV.fetch('BARONG_USE_HTTPS', 'true') == 'true',
+               callback_url: ENV.fetch('BARONG_OAUTH2_REDIRECT_URL')
   end
 end
 
